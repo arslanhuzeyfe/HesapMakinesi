@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HesapMakinesi.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HesapMakinesi"
+    Title="HesapMakinesi"
+        FlyoutBehavior="Flyout">
+
+    <ShellContent
+        Title="Standart"
+        ContentTemplate="{DataTemplate local:StandartPage}"
+        Route="standart" />
+    
+    <ShellContent
+        Title="Bilimsel"
+        ContentTemplate="{DataTemplate local:BilimselPage}"
+        Route="bilimsel" />
+    
+    <ShellContent
+        Title="Ayarlar"
+        ContentTemplate="{DataTemplate local:AyarlarPage}"
+        Route="ayarlar" />    
+</Shell>

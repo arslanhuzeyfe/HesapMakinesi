@@ -1,0 +1,9 @@
+namespace HesapMakinesi;
+
+public partial class AyarlarPage : ContentPage
+{
+	public AyarlarPage()
+	{
+		InitializeComponent();
+	}
+}

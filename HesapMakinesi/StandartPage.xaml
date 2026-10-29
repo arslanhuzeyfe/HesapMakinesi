@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HesapMakinesi.StandartPage"
+             Title="Standart">
+
+    <Grid RowDefinitions="*,3*" Padding="8">
+
+        <!-- Üst: ekran -->
+        <Label x:Name="lblEkran"
+               Grid.Row="0"
+               Text="0"
+               FontSize="48"
+               HorizontalOptions="End"
+               VerticalOptions="End" />
+
+        <!-- Alt: tuş takımı (6 satır × 4 sütun) -->
+        <Grid Grid.Row="1"
+              RowDefinitions="*,*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*"
+              RowSpacing="4"
+              ColumnSpacing="4">
+
+            <!-- Satır 0 -->
+            <Button Text="%"   Grid.Row="0" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="CE"  Grid.Row="0" Grid.Column="1" Clicked="EkranTemizle_Clicked" />
+            <Button Text="C"   Grid.Row="0" Grid.Column="2" Clicked="Temizle_Clicked" />
+            <Button Text="⌫"   Grid.Row="0" Grid.Column="3" Clicked="Sil_Clicked" />
+
+            <!-- Satır 1 -->
+            <Button Text="1/x" Grid.Row="1" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="x²"  Grid.Row="1" Grid.Column="1" Clicked="TekSayi_Clicked" />
+            <Button Text="√x"  Grid.Row="1" Grid.Column="2" Clicked="TekSayi_Clicked" />
+            <Button Text="÷"   Grid.Row="1" Grid.Column="3" Clicked="Islem_Clicked" />
+
+            <!-- Satır 2 -->
+            <Button Text="7"   Grid.Row="2" Grid.Column="0" Clicked="Rakam_Clicked" />
+            <Button Text="8"   Grid.Row="2" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="9"   Grid.Row="2" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text="×"   Grid.Row="2" Grid.Column="3" Clicked="Islem_Clicked" />
+
+            <!-- Satır 3 -->
+            <Button Text="4"   Grid.Row="3" Grid.Column="0" Clicked="Rakam_Clicked" />
+            <Button Text="5"   Grid.Row="3" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="6"   Grid.Row="3" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text="−"   Grid.Row="3" Grid.Column="3" Clicked="Islem_Clicked" />
+
+            <!-- Satır 4 -->
+            <Button Text="1"   Grid.Row="4" Grid.Column="0" Clicked="Rakam_Clicked" />
+            <Button Text="2"   Grid.Row="4" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="3"   Grid.Row="4" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text="+"   Grid.Row="4" Grid.Column="3" Clicked="Islem_Clicked" />
+
+            <!-- Satır 5 -->
+            <Button Text="+/−" Grid.Row="5" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="0"   Grid.Row="5" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text=","   Grid.Row="5" Grid.Column="2" Clicked="Virgul_Clicked" />
+            <Button Text="="   Grid.Row="5" Grid.Column="3" Clicked="Esittir_Clicked" />
+        </Grid>
+    </Grid>
+</ContentPage>
