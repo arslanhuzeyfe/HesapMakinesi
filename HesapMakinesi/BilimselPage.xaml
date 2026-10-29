@@ -3,10 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HesapMakinesi.BilimselPage"
              Title="Bilimsel">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="*,4*" Padding="8">
+
+        <!-- Üst: ekran -->
+        <Label x:Name="lblEkran"
+               Grid.Row="0"
+               Text="0"
+               FontSize="40"
+               HorizontalOptions="End"
+               VerticalOptions="End" />
+
+        <!-- Alt: tuş takımı (7 satır × 5 sütun); trigonometri derece cinsinden -->
+        <Grid Grid.Row="1"
+              RowDefinitions="*,*,*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*,*"
+              RowSpacing="4"
+              ColumnSpacing="4">
+
+            <!-- Satır 0: trigonometri ve temizleme -->
+            <Button Text="sin" Grid.Row="0" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="cos" Grid.Row="0" Grid.Column="1" Clicked="TekSayi_Clicked" />
+            <Button Text="tan" Grid.Row="0" Grid.Column="2" Clicked="TekSayi_Clicked" />
+            <Button Text="C"   Grid.Row="0" Grid.Column="3" Clicked="Temizle_Clicked" />
+            <Button Text="⌫"   Grid.Row="0" Grid.Column="4" Clicked="Sil_Clicked" />
+
+            <!-- Satır 1 -->
+            <Button Text="x²"  Grid.Row="1" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="1/x" Grid.Row="1" Grid.Column="1" Clicked="TekSayi_Clicked" />
+            <Button Text="|x|" Grid.Row="1" Grid.Column="2" Clicked="TekSayi_Clicked" />
+            <Button Text="n!"  Grid.Row="1" Grid.Column="3" Clicked="TekSayi_Clicked" />
+            <Button Text="mod" Grid.Row="1" Grid.Column="4" Clicked="Islem_Clicked" />
+
+            <!-- Satır 2 -->
+            <Button Text="√x"  Grid.Row="2" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="π"   Grid.Row="2" Grid.Column="1" Clicked="Sabit_Clicked" />
+            <Button Text="e"   Grid.Row="2" Grid.Column="2" Clicked="Sabit_Clicked" />
+            <Button Text="CE"  Grid.Row="2" Grid.Column="3" Clicked="EkranTemizle_Clicked" />
+            <Button Text="÷"   Grid.Row="2" Grid.Column="4" Clicked="Islem_Clicked" />
+
+            <!-- Satır 3 -->
+            <Button Text="xʸ"  Grid.Row="3" Grid.Column="0" Clicked="Islem_Clicked" />
+            <Button Text="7"   Grid.Row="3" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="8"   Grid.Row="3" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text="9"   Grid.Row="3" Grid.Column="3" Clicked="Rakam_Clicked" />
+            <Button Text="×"   Grid.Row="3" Grid.Column="4" Clicked="Islem_Clicked" />
+
+            <!-- Satır 4 -->
+            <Button Text="10ˣ" Grid.Row="4" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="4"   Grid.Row="4" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="5"   Grid.Row="4" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text="6"   Grid.Row="4" Grid.Column="3" Clicked="Rakam_Clicked" />
+            <Button Text="−"   Grid.Row="4" Grid.Column="4" Clicked="Islem_Clicked" />
+
+            <!-- Satır 5 -->
+            <Button Text="log" Grid.Row="5" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="1"   Grid.Row="5" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="2"   Grid.Row="5" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text="3"   Grid.Row="5" Grid.Column="3" Clicked="Rakam_Clicked" />
+            <Button Text="+"   Grid.Row="5" Grid.Column="4" Clicked="Islem_Clicked" />
+
+            <!-- Satır 6 -->
+            <Button Text="ln"  Grid.Row="6" Grid.Column="0" Clicked="TekSayi_Clicked" />
+            <Button Text="+/−" Grid.Row="6" Grid.Column="1" Clicked="TekSayi_Clicked" />
+            <Button Text="0"   Grid.Row="6" Grid.Column="2" Clicked="Rakam_Clicked" />
+            <Button Text=","   Grid.Row="6" Grid.Column="3" Clicked="Virgul_Clicked" />
+            <Button Text="="   Grid.Row="6" Grid.Column="4" Clicked="Esittir_Clicked" />
+        </Grid>
+    </Grid>
 </ContentPage>
