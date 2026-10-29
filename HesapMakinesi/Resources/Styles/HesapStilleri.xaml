@@ -9,10 +9,21 @@
     <x:Double x:Key="BaslikYaziBoyutu">24</x:Double>
     <x:Double x:Key="TusYaziBoyutu">18</x:Double>
     <x:Double x:Key="IslemYaziBoyutu">24</x:Double>
+    <x:Double x:Key="SecenekYaziBoyutu">18</x:Double>
 
     <!-- Sayfa zemini (örtük, bütün sayfalar): şablonun Page stilinin yerine geçer -->
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ZeminAcik}, Dark={StaticResource ZeminKoyu}}" />
+    </Style>
+
+    <!-- Üst şerit ve açılır menü (örtük, AppShell'e uygulanır): şablonun mor renkleri yerine
+         sayfayla aynı zemin, ☰ ve başlık metin renginde -->
+    <Style TargetType="Shell" ApplyToDerivedTypes="True">
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource ZeminAcik}, Dark={StaticResource ZeminKoyu}}" />
+        <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+        <Setter Property="FlyoutBackgroundColor" Value="{AppThemeBinding Light={StaticResource ZeminAcik}, Dark={StaticResource ZeminKoyu}}" />
+        <Setter Property="Shell.NavBarHasShadow" Value="False" />
     </Style>
 
     <!-- Sonucun yazıldığı ekran -->
@@ -29,6 +40,46 @@
         <Setter Property="FontSize" Value="{StaticResource BaslikYaziBoyutu}" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+    </Style>
+
+    <!-- Ayarlar'daki tema seçenekleri (örtük). Yuvarlağı şablonla kendimiz çiziyoruz:
+         platformun kendi çizimi uygulamanın temasını değil sistemin temasını izliyor,
+         bu yüzden Açık temada koyu sistemde yuvarlak görünmüyordu. -->
+    <Style TargetType="RadioButton">
+        <Setter Property="FontSize" Value="{StaticResource SecenekYaziBoyutu}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+        <Setter Property="ControlTemplate">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="0,6" BackgroundColor="Transparent">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="isaret" Property="Opacity" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="isaret" Property="Opacity" Value="0" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+
+                    <!-- Dış halka: metin renginde, iki temada da zeminden ayrışır -->
+                    <Ellipse WidthRequest="22" HeightRequest="22" StrokeThickness="2" Fill="Transparent"
+                             VerticalOptions="Center"
+                             Stroke="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+                    <!-- Seçili nokta: vurgu renginde, yalnız Checked durumunda görünür -->
+                    <Ellipse x:Name="isaret" WidthRequest="12" HeightRequest="12" Opacity="0"
+                             HorizontalOptions="Center" VerticalOptions="Center"
+                             Fill="{AppThemeBinding Light={StaticResource VurguAcik}, Dark={StaticResource VurguKoyu}}" />
+                    <ContentPresenter Grid.Column="1" VerticalOptions="Center" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
     </Style>
 
     <!-- ORTAK TEMEL: bütün tuşların paylaştığı özellikler (x:Key'li, doğrudan kullanılmaz) -->
