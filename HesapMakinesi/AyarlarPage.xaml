@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HesapMakinesi.AyarlarPage"
              Title="Ayarlar">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+
+        <Label Text="Uygulama teması" Style="{StaticResource BaslikEtiketi}" />
+
+        <!-- Aynı GroupName: üçünden yalnız biri seçili olabilir. Value, Preferences'a yazılan değer -->
+        <RadioButton x:Name="rbAcik"   Content="Açık"                  GroupName="Tema" Value="Light"  CheckedChanged="Tema_CheckedChanged" />
+        <RadioButton x:Name="rbKoyu"   Content="Koyu"                  GroupName="Tema" Value="Dark"   CheckedChanged="Tema_CheckedChanged" />
+        <RadioButton x:Name="rbSistem" Content="Sistem ayarını kullan" GroupName="Tema" Value="System" CheckedChanged="Tema_CheckedChanged" />
+
     </VerticalStackLayout>
 </ContentPage>

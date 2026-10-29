@@ -10,9 +10,7 @@
         <Label x:Name="lblEkran"
                Grid.Row="0"
                Text="0"
-               FontSize="48"
-               HorizontalOptions="End"
-               VerticalOptions="End" />
+               Style="{StaticResource EkranEtiketi}" />
 
         <!-- Alt: tuş takımı (6 satır × 4 sütun) -->
         <Grid Grid.Row="1"
@@ -31,31 +29,31 @@
             <Button Text="1/x" Grid.Row="1" Grid.Column="0" Clicked="TekSayi_Clicked" />
             <Button Text="x²"  Grid.Row="1" Grid.Column="1" Clicked="TekSayi_Clicked" />
             <Button Text="√x"  Grid.Row="1" Grid.Column="2" Clicked="TekSayi_Clicked" />
-            <Button Text="÷"   Grid.Row="1" Grid.Column="3" Clicked="Islem_Clicked" />
+            <Button Text="÷"   Grid.Row="1" Grid.Column="3" Clicked="Islem_Clicked" Style="{StaticResource IslemButonu}" />
 
             <!-- Satır 2 -->
-            <Button Text="7"   Grid.Row="2" Grid.Column="0" Clicked="Rakam_Clicked" />
-            <Button Text="8"   Grid.Row="2" Grid.Column="1" Clicked="Rakam_Clicked" />
-            <Button Text="9"   Grid.Row="2" Grid.Column="2" Clicked="Rakam_Clicked" />
-            <Button Text="×"   Grid.Row="2" Grid.Column="3" Clicked="Islem_Clicked" />
+            <Button Text="7"   Grid.Row="2" Grid.Column="0" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="8"   Grid.Row="2" Grid.Column="1" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="9"   Grid.Row="2" Grid.Column="2" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="×"   Grid.Row="2" Grid.Column="3" Clicked="Islem_Clicked" Style="{StaticResource IslemButonu}" />
 
             <!-- Satır 3 -->
-            <Button Text="4"   Grid.Row="3" Grid.Column="0" Clicked="Rakam_Clicked" />
-            <Button Text="5"   Grid.Row="3" Grid.Column="1" Clicked="Rakam_Clicked" />
-            <Button Text="6"   Grid.Row="3" Grid.Column="2" Clicked="Rakam_Clicked" />
-            <Button Text="−"   Grid.Row="3" Grid.Column="3" Clicked="Islem_Clicked" />
+            <Button Text="4"   Grid.Row="3" Grid.Column="0" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="5"   Grid.Row="3" Grid.Column="1" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="6"   Grid.Row="3" Grid.Column="2" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="−"   Grid.Row="3" Grid.Column="3" Clicked="Islem_Clicked" Style="{StaticResource IslemButonu}" />
 
             <!-- Satır 4 -->
-            <Button Text="1"   Grid.Row="4" Grid.Column="0" Clicked="Rakam_Clicked" />
-            <Button Text="2"   Grid.Row="4" Grid.Column="1" Clicked="Rakam_Clicked" />
-            <Button Text="3"   Grid.Row="4" Grid.Column="2" Clicked="Rakam_Clicked" />
-            <Button Text="+"   Grid.Row="4" Grid.Column="3" Clicked="Islem_Clicked" />
+            <Button Text="1"   Grid.Row="4" Grid.Column="0" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="2"   Grid.Row="4" Grid.Column="1" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="3"   Grid.Row="4" Grid.Column="2" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
+            <Button Text="+"   Grid.Row="4" Grid.Column="3" Clicked="Islem_Clicked" Style="{StaticResource IslemButonu}" />
 
             <!-- Satır 5 -->
             <Button Text="+/−" Grid.Row="5" Grid.Column="0" Clicked="TekSayi_Clicked" />
-            <Button Text="0"   Grid.Row="5" Grid.Column="1" Clicked="Rakam_Clicked" />
+            <Button Text="0"   Grid.Row="5" Grid.Column="1" Clicked="Rakam_Clicked" Style="{StaticResource RakamButonu}" />
             <Button Text=","   Grid.Row="5" Grid.Column="2" Clicked="Virgul_Clicked" />
-            <Button Text="="   Grid.Row="5" Grid.Column="3" Clicked="Esittir_Clicked" />
+            <Button Text="="   Grid.Row="5" Grid.Column="3" Clicked="Esittir_Clicked" Style="{StaticResource EsittirButonu}" />
         </Grid>
     </Grid>
 </ContentPage>

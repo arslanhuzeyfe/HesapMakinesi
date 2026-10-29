@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Hesap makinesinin kendi stilleri. App.xaml'da Styles.xaml'dan SONRA birleştirilir,
+     böylece aynı türdeki şablon stillerini ezer. Renkler Colors.xaml'dan gelir. -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Yazı boyutları tek yerde; sayfalarda sayı yazılmaz -->
+    <x:Double x:Key="EkranYaziBoyutu">44</x:Double>
+    <x:Double x:Key="BaslikYaziBoyutu">24</x:Double>
+    <x:Double x:Key="TusYaziBoyutu">18</x:Double>
+    <x:Double x:Key="IslemYaziBoyutu">24</x:Double>
+
+    <!-- Sayfa zemini (örtük, bütün sayfalar): şablonun Page stilinin yerine geçer -->
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ZeminAcik}, Dark={StaticResource ZeminKoyu}}" />
+    </Style>
+
+    <!-- Sonucun yazıldığı ekran -->
+    <Style x:Key="EkranEtiketi" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource EkranYaziBoyutu}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+    </Style>
+
+    <!-- Ayarlar sayfasındaki başlık -->
+    <Style x:Key="BaslikEtiketi" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource BaslikYaziBoyutu}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+    </Style>
+
+    <!-- ORTAK TEMEL: bütün tuşların paylaştığı özellikler (x:Key'li, doğrudan kullanılmaz) -->
+    <Style x:Key="TemelButon" TargetType="Button">
+        <Setter Property="FontSize" Value="{StaticResource TusYaziBoyutu}" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MetinAcik}, Dark={StaticResource MetinKoyu}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource IslemAcik}, Dark={StaticResource IslemKoyu}}" />
+    </Style>
+
+    <!-- ÖRTÜK: x:Key yok; Style verilmeyen bütün butonlar bunu alır (%, CE, C, ⌫, sin, log…) -->
+    <Style TargetType="Button" BasedOn="{StaticResource TemelButon}" />
+
+    <!-- AÇIK: rakam tuşları; temelden türer, açık zemin ve kalın yazı -->
+    <Style x:Key="RakamButonu" TargetType="Button" BasedOn="{StaticResource TemelButon}">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource RakamAcik}, Dark={StaticResource RakamKoyu}}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <!-- AÇIK: + − × ÷ tuşları; temelden türer, daha büyük yazı -->
+    <Style x:Key="IslemButonu" TargetType="Button" BasedOn="{StaticResource TemelButon}">
+        <Setter Property="FontSize" Value="{StaticResource IslemYaziBoyutu}" />
+    </Style>
+
+    <!-- AÇIK: eşittir tuşu; temelden türer, vurgu rengi -->
+    <Style x:Key="EsittirButonu" TargetType="Button" BasedOn="{StaticResource TemelButon}">
+        <Setter Property="FontSize" Value="{StaticResource IslemYaziBoyutu}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource VurguAcik}, Dark={StaticResource VurguKoyu}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource VurguMetinAcik}, Dark={StaticResource VurguMetinKoyu}}" />
+    </Style>
+
+</ResourceDictionary>

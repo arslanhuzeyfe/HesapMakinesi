@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -41,4 +41,19 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <!-- Hesap makinesi renkleri (Windows Hesap Makinesi'ne yakın tonlar) -->
+    <Color x:Key="ZeminAcik">#F3F3F3</Color>        <!-- sayfa zemini -->
+    <Color x:Key="ZeminKoyu">#202020</Color>
+    <Color x:Key="MetinAcik">#1A1A1A</Color>        <!-- yazı rengi -->
+    <Color x:Key="MetinKoyu">#FFFFFF</Color>
+    <Color x:Key="RakamAcik">#FFFFFF</Color>        <!-- rakam tuşları -->
+    <Color x:Key="RakamKoyu">#3B3B3B</Color>
+    <Color x:Key="IslemAcik">#E8E8E8</Color>        <!-- işlem ve fonksiyon tuşları -->
+    <Color x:Key="IslemKoyu">#2D2D2D</Color>
+    <Color x:Key="VurguAcik">#005FB8</Color>        <!-- eşittir tuşu -->
+    <Color x:Key="VurguKoyu">#4CC2FF</Color>
+    <Color x:Key="VurguMetinAcik">#FFFFFF</Color>   <!-- eşittir tuşunun yazısı -->
+    <Color x:Key="VurguMetinKoyu">#000000</Color>
+
 </ResourceDictionary>
